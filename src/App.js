@@ -2,27 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
+import { SomeContextProvider } from "./components/SomeContext";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         console.log('render '+ this.constructor.name);
 
-        const { initialName: name } = this.props;
-
-        const componentProps = {
-            charCount: name.length,
-            name,
-        }
+        const { initialName } = this.props;
 
         return (
-            <div className="App">
-                <Header {...componentProps} />
-                <Main {...componentProps} />
-            </div>
+            <SomeContextProvider name={initialName}>
+                <div className="App">
+                    <Header />
+                    <Main />
+                </div>
+            </SomeContextProvider>
         );
     }
 }

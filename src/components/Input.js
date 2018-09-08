@@ -1,37 +1,23 @@
 import React, { Component } from 'react';
 
 class Input extends Component {
-    constructor(props) {
-        super(props);
-
-        const { name } = this.props;
-
-        this.state = {
-            charCount: name.length,
-            name,
-        };
-    }
-
-    handleInput = (e) => {
-        const name = e.target.value;
-
-        this.setState({
-            charCount: name.length,
-            name,
-        });
-    };
-
     render() {
         console.log('render '+ this.constructor.name);
+
         const {
+            changeName,
             charCount,
             name,
-        } = this.state;
+        } = this.props;
 
         return (
             <div className="App-input">
                 <div>
-                    <input type="input" onChange={this.handleInput} value={name} />
+                    <input
+                        type="input"
+                        onChange={e => changeName(e.target.value)}
+                        value={name}
+                    />
                 </div>
                 <div>
                     {charCount}
