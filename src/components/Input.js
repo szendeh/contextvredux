@@ -3,22 +3,12 @@ import React, { Component } from 'react';
 class Input extends Component {
     constructor(props) {
         super(props);
-
-        const { name } = this.props;
-
-        this.state = {
-            charCount: name.length,
-            name,
-        };
-    }
+    };
 
     handleInput = (e) => {
         const name = e.target.value;
 
-        this.setState({
-            charCount: name.length,
-            name,
-        });
+        this.props.changeName(name);
     };
 
     render() {
@@ -26,7 +16,7 @@ class Input extends Component {
         const {
             charCount,
             name,
-        } = this.state;
+        } = this.props;
 
         return (
             <div className="App-input">

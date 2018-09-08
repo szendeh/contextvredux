@@ -6,17 +6,29 @@ import Main from './components/Main';
 class App extends Component {
     constructor(props) {
         super(props);
+
+        const { initialName } = props;
+
+        this.state = {
+            charCount: initialName.length,
+            name: initialName,
+        };
     }
+
+    changeName = (name) => {
+        this.setState({
+            charCount: name.length,
+            name,
+        });
+    };
 
     render() {
         console.log('render '+ this.constructor.name);
-
-        const { initialName: name } = this.props;
-
         const componentProps = {
-            charCount: name.length,
-            name,
-        }
+            changeName: this.changeName,
+            charCount: this.state.charCount,
+            name: this.state.name,
+        };
 
         return (
             <div className="App">
