@@ -6,7 +6,7 @@ class MainSubComponent extends Component {
         console.log('render '+ this.constructor.name);
         return (
             <div className="App-header-subcomponent">
-                name input MAIN: <Input {...this.props} />
+                name input MAIN: <Input />
             </div>
         );
     }

@@ -7,7 +7,7 @@ class Main extends Component {
         return (
             <div className="App-main">
                 <h1>main this thing</h1>
-                <MainSubComponent {...this.props} />
+                <MainSubComponent />
             </div>
         );
     }

@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <header className="App-header">
                 <h1>Welcome to Context v. Redux... Redux!</h1>
-                <HeaderSubComponent {...this.props} />
+                <HeaderSubComponent />
             </header>
         );
     }
