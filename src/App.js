@@ -3,15 +3,25 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 
-const initialName = 'solh is great'; // gotten from somewhere awesome, no doubt
-
 class App extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         console.log('render '+ this.constructor.name);
+
+        const { initialName: name } = this.props;
+
+        const componentProps = {
+            charCount: name.length,
+            name,
+        }
+
         return (
             <div className="App">
-                <Header name={initialName} />
-                <Main name={initialName} />
+                <Header {...componentProps} />
+                <Main {...componentProps} />
             </div>
         );
     }

@@ -4,5 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const initialName = 'solh is great'; // gotten from somewhere awesome, no doubt
+
+ReactDOM.render(<App initialName={initialName} />, document.getElementById('root'));
 registerServiceWorker();
