@@ -3,12 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
+class App extends Component {render() {
         console.log('render '+ this.constructor.name);
 
         const { initialName: name } = this.props;
@@ -16,7 +11,7 @@ class App extends Component {
         const componentProps = {
             charCount: name.length,
             name,
-        }
+        };
 
         return (
             <div className="App">
